@@ -1,19 +1,26 @@
+$widthScreen: 100%;
 $ribeyeFont: "Ribeye", serif;
 $darkCoffeeCol: #270f04;
+$borderRadTwnty: 200px;
+$buttonBgCol: #A8806A;
+$buttonHovBgCol: #6b5245;
+$whiteMilkCol: #fff8f8;
 
-@mixin flex-column-center {
+@mixin flex($direction, $items, $justify) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: $direction;
+    align-items: $items;
+    justify-content: $justify;
 }
 
 body {
-    @include flex-column-center;
+    @include flex(column, center, center);
 }
 
 header {
-    width: 100%;
+    width: $widthScreen;
     min-height: 200px;
     background-image: url('/images/header.png');
     display: flex;
@@ -30,20 +37,20 @@ header {
 }
 
 main {
-    width: 100%;
+    width: $widthScreen;
     min-height: 100dvh;
     background-image: url('/images/background.png');
 
-    @include flex-column-center;
+    @include flex(column, center, center);
     justify-content: flex-start;
 
     .main-container {
         width: min(100% - 2rem, 60rem);
         padding-top: 12em;
-    
-        @include flex-column-center;
+
+        @include flex(column, center, center);
         gap: 20px;
-    
+
         font-family: $ribeyeFont;
         font-size: 18px;
 
@@ -51,12 +58,87 @@ main {
             text-align: center;
             color: $darkCoffeeCol;
         }
-    }    
+    }
 }
 
 .container {
+    width: $widthScreen;
+
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
+.coffee-add-or-search {
+    width: 500px;
+
+    @include flex(column, flex-start, space-around);
+    gap: 30px;
+}
+
+.btn-search-or-add {
+    width: $widthScreen;
+
+    @include flex(row, center, center);
+    gap: 1em;
+
+    .btn {
+        padding: 15px 30px;
+
+        cursor: pointer;
+        border: none;
+        border-radius: $borderRadTwnty;
+        background-color: $buttonBgCol;
+        box-shadow: 0px 8px 0px $darkCoffeeCol;
+
+        font-family: $ribeyeFont;
+        color: $darkCoffeeCol;
+        font-size: 15px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $buttonHovBgCol;
+        }
+    }
+
+    .selected {
+        transform: translateY(8px);
+        box-shadow: none;
+        background-color: $darkCoffeeCol;
+        color: $whiteMilkCol;
+
+        &:hover {
+            background-color: $darkCoffeeCol;
+        }
+    }
+
+
+}
+
+.coffee-search {
+    width: $widthScreen;
+
+    font-family: $ribeyeFont;
+    color: $darkCoffeeCol;
+
+    @include flex(column, center, center);
+    gap: 20px;
+
+    .coffee-type {
+        width: 400px;
+        padding: 20px 0px;
+        text-align: center;
+
+        font-family: $ribeyeFont;
+
+        border-radius: $borderRadTwnty;
+
+        appearance: none;
+        background-image: url('../images/icons8-down-arrow-50.png');
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+        background-size: 20px;
+
+        transition: all 0.2s ease-in-out;
+    }
+}

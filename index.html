@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mikoffee</title>
-    <link rel="icon" type="image/x-icon" href="images/icons8-coffee-script-16.png">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ribeye&display=swap" rel="stylesheet">
+<head>
+   <meta charset="UTF-8">
+   <title>Mikoffee</title>
+   <link rel="icon" type="image/x-icon" href="images/icons8-coffee-script-16.png">
+
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Ribeye&display=swap" rel="stylesheet">
 </head>
+
 <body class="mx-auto">
-    <header>
-        <h1>Mikoffee</h1>
-    </header>
-    <main>
-        <div class="main-container">
-            <article>
-                <p>A simple webpage that helps you find your coffee's name and roast type, 
-                    with an option to <br> add your own coffee information.</p>
-            </article>
-            <div class="container">
-                <section>
-                    a
-                </section>
-                <section>
-                    b
-                </section>
-            </div>
-        </div>
-    </main>
-    <footer></footer>
-    <script src="main.js"></script>
+   <header>
+      <h1>Mikoffee</h1>
+   </header>
+   <main>
+      <div class="main-container">
+         <article>
+            <p>A simple webpage that helps you find your coffee's name and roast type,
+               with an option to <br> add your own coffee information.</p>
+         </article>
+         <div class="container">
+            <section class="coffee-add-or-search">
+               <div class="btn-search-or-add">
+                  <button id="search-coffee" class="btn search selected">
+                     <i class="las la-search"></i>
+                     <span>Coffee Search</span>
+                  </button>
+                  <button id="add-coffee" class="btn add">
+                     <i class="las la-plus-circle"></i>
+                     <span>Add Coffee</span>
+                  </button>
+               </div>
+               <div class="coffee-search">
+                  <label for="type">Roast Type</label>
+                  <select name="type" id="coffee-type" class="coffee-type">
+                     <option value="any">Any</option>
+                     <option value="light">Light</option>
+                     <option value="medium">Medium</option>
+                     <option value="dark">Dark</option>
+                  </select>
+                  <label for="coffee-name">Coffee Name</label>
+                  <input name="coffee-name" type="text">
+               </div>
+               <div class="add-coffee">
+
+               </div>
+            </section>
+            <section>
+               b
+            </section>
+         </div>
+      </div>
+   </main>
+   <footer></footer>
+   <script src="main.js"></script>
 </body>
+
 </html>
