@@ -1,0 +1,62 @@
+$ribeyeFont: "Ribeye", serif;
+$darkCoffeeCol: #270f04;
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    @include flex-column-center;
+}
+
+header {
+    width: 100%;
+    min-height: 200px;
+    background-image: url('/images/header.png');
+    display: flex;
+    position: absolute;
+    top: 0;
+
+    h1 {
+        padding-top: 0.5em;
+        text-align: center;
+        font-size: 70px;
+        font-family: $ribeyeFont;
+        color: $darkCoffeeCol;
+    }
+}
+
+main {
+    width: 100%;
+    min-height: 100dvh;
+    background-image: url('/images/background.png');
+
+    @include flex-column-center;
+    justify-content: flex-start;
+
+    .main-container {
+        width: min(100% - 2rem, 60rem);
+        padding-top: 12em;
+    
+        @include flex-column-center;
+        gap: 20px;
+    
+        font-family: $ribeyeFont;
+        font-size: 18px;
+
+        article {
+            text-align: center;
+            color: $darkCoffeeCol;
+        }
+    }    
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+

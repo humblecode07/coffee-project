@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  width: 100%;
+  min-height: 200px;
+  background-image: url("/images/header.png");
+  display: flex;
+  position: absolute;
+  top: 0;
+}
+header h1 {
+  padding-top: 0.5em;
+  text-align: center;
+  font-size: 70px;
+  font-family: "Ribeye", serif;
+  color: #270f04;
+}
+
+main {
+  width: 100%;
+  min-height: 100dvh;
+  background-image: url("/images/background.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+}
+main .main-container {
+  width: min(100% - 2rem, 60rem);
+  padding-top: 12em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-family: "Ribeye", serif;
+  font-size: 18px;
+}
+main .main-container article {
+  text-align: center;
+  color: #270f04;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}/*# sourceMappingURL=style.css.map */
