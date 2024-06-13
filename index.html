@@ -5,9 +5,8 @@
    <meta charset="UTF-8">
    <title>Mikoffee</title>
    <link rel="icon" type="image/x-icon" href="images/icons8-coffee-script-16.png">
-
-   <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet"
       href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +36,7 @@
                      <span>Add Coffee</span>
                   </button>
                </div>
-               <div class="coffee-search">
+               <form class="coffee-search">
                   <label for="type">Roast Type</label>
                   <select name="type" id="coffee-type" class="coffee-type">
                      <option value="any">Any</option>
@@ -46,15 +45,70 @@
                      <option value="dark">Dark</option>
                   </select>
                   <label for="coffee-name">Coffee Name</label>
-                  <input name="coffee-name" type="text">
-               </div>
+                  <input name="coffee-name" type="text" class="coffee-name">
+               </form>
                <div class="add-coffee">
-
+                  <section class="coffee-detail-section-one">
+                     <div class="coffee-image-cont">
+                        <span>Coffee Profile</span>
+                        <label for="upload-photo">
+                           <input id="upload-photo" type="file" name="coffee-image" accept=".png, .jpeg, .jpg">
+                           <img width="120" height="120"
+                              src="https://th.bing.com/th/id/OIP.pxNzj6p1CkBilArRqyWTGwHaE8?rs=1&pid=ImgDetMain"
+                              alt="external-coffee-coworking-space-xnimrodx-lineal-color-xnimrodx" />
+                        </label>
+                     </div>
+                     <div class="coffee-add-details">
+                        <span>Roast Type</span>
+                        <select class="coffee-type" name="type">
+                           <option value="any">Any</option>
+                           <option value="light">Light</option>
+                           <option value="medium">Medium</option>
+                           <option value="dark">Dark</option>
+                        </select>
+                        <span>Coffee Name</span>
+                        <input class="coffee-name" name="coffee-name">
+                     </div>
+                  </section>
+                  <section class="coffee-detail-section-two">
+                     <span>Coffee Description</span>
+                     <textarea id="coffee-desc" name="coffee-desc" rows="1" cols="50"></textarea>
+                     <button class="btn">Add!</button>
+                  </section>
                </div>
             </section>
-            <section>
-               b
-            </section>
+            <aside id="coffee-list" class="coffee-list">
+               <figure class="coffee-card one">
+                  <img class="card-coffee-image" src="https://th.bing.com/th/id/R.f0e601573d2e900373d7edb566022193?rik=tavB6JEAn3WvCw&riu=http%3a%2f%2f2.bp.blogspot.com%2f-swesfwQN5HQ%2fVPdQ-CCcg1I%2fAAAAAAAAA2E%2fsDxeH4J_6lo%2fs1600%2fcoffee-1.jpg&ehk=2JmzjLRFxhykggu5OOH1gqhV8ktFkMY5ATo5hL6MdqM%3d&risl=&pid=ImgRaw&r=0" alt="">
+                  <article class="coffee-details">
+                     <div class="coffee-name-type">
+                        <h3 class="coffee-name">Half City</h3>
+                        <span class="coffee-roast">Light</span>
+                     </div>
+                     <p class="coffee-desc">
+                        A well-balanced medium roast with a full-bodied flavor.
+                     </p>
+                  </article>
+               </figure>
+               <figure class="coffee-card two">
+                  <article class="coffee-details">
+                     <h3 class="coffee-name">Frenchcc Dark</h3>
+                     <span class="coffee-roast">Dark</span>
+                  </article>
+               </figure>
+               <figure class="coffee-card two">
+                  <article class="coffee-details">
+                     <h3 class="coffee-name">Frenchb Dark</h3>
+                     <span class="coffee-roast">Dark</span>
+                  </article>
+               </figure>
+               <figure class="coffee-card two">
+                  <article class="coffee-details">
+                     <h3 class="coffee-name">Frenchaa Dark</h3>
+                     <span class="coffee-roast">Dark</span>
+                  </article>
+               </figure>
+            </aside>
          </div>
       </div>
    </main>

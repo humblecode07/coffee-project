@@ -1,15 +1,17 @@
 [
-    {"id":1,"name":"Light City","roast":"light"},
-    {"id":2,"name":"Half City","roast":"light"},
-    {"id":3,"name":"Cinnamon","roast":"light"},
-    {"id":4,"name":"City","roast":"medium"},
-    {"id":5,"name":"American","roast":"medium"},
-    {"id":6,"name":"Breakfast","roast":"medium"},
-    {"id":7,"name":"High","roast":"dark"},
-    {"id":8,"name":"Continental","roast":"dark"},
-    {"id":9,"name":"New Orleans","roast":"dark"},
-    {"id":10,"name":"European","roast":"dark"},
-    {"id":11,"name":"Espresso","roast":"dark"},
-    {"id":12,"name":"Viennese","roast":"dark"},
-    {"id":13,"name":"Italian","roast":"dark"},
-    {"id":14,"name":"French","roast":"dark"}]
+    {"id":1,"name":"Light City","roast":"light","description":"A light roast coffee with a bright and vibrant flavor."},
+    {"id":2,"name":"Half City","roast":"light","description":"A smooth and mellow light roast with a delicate aroma."},
+    {"id":3,"name":"Cinnamon","roast":"light","description":"A lightly roasted coffee with a hint of spicy cinnamon flavor."},
+    {"id":4,"name":"City","roast":"medium","description":"A well-balanced medium roast with a full-bodied flavor."},
+    {"id":5,"name":"American","roast":"medium","description":"A classic medium roast with a rich and smooth taste."},
+    {"id":6,"name":"Breakfast","roast":"medium","description":"A hearty medium roast perfect for starting your day."},
+    {"id":7,"name":"High","roast":"dark","description":"A bold and intense dark roast with a deep flavor."},
+    {"id":8,"name":"Continental","roast":"dark","description":"A strong dark roast with a rich and smoky taste."},
+    {"id":9,"name":"New Orleans","roast":"dark","description":"A dark roast with a hint of chicory for a unique flavor."},
+    {"id":10,"name":"European","roast":"dark","description":"A deep, rich dark roast with a smooth finish."},
+    {"id":11,"name":"Espresso","roast":"dark","description":"A strong, full-bodied coffee with a rich flavor."},
+    {"id":12,"name":"Viennese","roast":"dark","description":"A dark roast with a slightly sweet and smoky taste."},
+    {"id":13,"name":"Italian","roast":"dark","description":"A robust dark roast with a bold and intense flavor."},
+    {"id":14,"name":"French","roast":"dark","description":"A very dark roast with a rich and intense flavor."}
+]
+

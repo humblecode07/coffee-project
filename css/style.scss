@@ -1,10 +1,17 @@
 $widthScreen: 100%;
 $ribeyeFont: "Ribeye", serif;
 $darkCoffeeCol: #270f04;
-$borderRadTwnty: 200px;
+$borderRadTwnty: 20px;
+$borderRadTwoHun: 200px;
+$gapTwnty: 1.3em;
+$gapThrty: 1.8em;
+$gapFrty: 2.3em;
 $buttonBgCol: #A8806A;
 $buttonHovBgCol: #6b5245;
 $whiteMilkCol: #fff8f8;
+$latteCol: #E1CFC1;
+$imageBgCol: #625451;
+
 
 @mixin flex($direction, $items, $justify) {
     display: -webkit-box;
@@ -15,6 +22,60 @@ $whiteMilkCol: #fff8f8;
     justify-content: $justify;
 }
 
+@mixin searchStyle($width) {
+    width: $width;
+    padding: 20px 0px;
+    border-radius: $borderRadTwoHun;
+    text-align: center;
+    font-family: $ribeyeFont;
+    background-color: $latteCol;
+}
+
+@mixin customizedSelect() {
+    appearance: none;
+    background-image: url('../images/icons8-down-arrow-50.png');
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 20px;
+}
+
+@mixin btnStyles($option) {
+    border: none;
+    border-radius: $borderRadTwoHun;
+    padding: 15px 30px;
+    cursor: pointer;
+    color: $darkCoffeeCol;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+
+    @if $option =='optOne' {
+        background-color: $buttonBgCol;
+        box-shadow: 0px 8px 0px $darkCoffeeCol;
+    }
+
+    @else {
+        background-color: $latteCol;
+        box-shadow: 0px 8px 0px $buttonBgCol;
+    }
+}
+
+@mixin borderStyle($pallateColor) {
+    border-style: solid;
+    border-width: 2px;
+    border-color: $pallateColor;
+}
+
+@mixin cardStyles() {
+    width: 200px;
+    height: 200px;
+    border-radius: $borderRadTwnty;
+    @include flex(column, center, center);
+}
+
+* {
+    font-family: $ribeyeFont
+}
+
 body {
     @include flex(column, center, center);
 }
@@ -23,7 +84,9 @@ header {
     width: $widthScreen;
     min-height: 200px;
     background-image: url('/images/header.png');
-    display: flex;
+
+    @include flex(row, flex-start, center);
+
     position: absolute;
     top: 0;
 
@@ -49,9 +112,8 @@ main {
         padding-top: 12em;
 
         @include flex(column, center, center);
-        gap: 20px;
+        gap: $gapFrty;
 
-        font-family: $ribeyeFont;
         font-size: 18px;
 
         article {
@@ -66,13 +128,13 @@ main {
 
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: $gapTwnty;
 }
 
 .coffee-add-or-search {
     width: 500px;
 
-    @include flex(column, flex-start, space-around);
+    @include flex(column, flex-start, flex-start);
     gap: 30px;
 }
 
@@ -83,18 +145,7 @@ main {
     gap: 1em;
 
     .btn {
-        padding: 15px 30px;
-
-        cursor: pointer;
-        border: none;
-        border-radius: $borderRadTwnty;
-        background-color: $buttonBgCol;
-        box-shadow: 0px 8px 0px $darkCoffeeCol;
-
-        font-family: $ribeyeFont;
-        color: $darkCoffeeCol;
-        font-size: 15px;
-        transition: all 0.2s ease-in-out;
+        @include btnStyles(optOne);
 
         &:hover {
             background-color: $buttonHovBgCol;
@@ -111,8 +162,6 @@ main {
             background-color: $darkCoffeeCol;
         }
     }
-
-
 }
 
 .coffee-search {
@@ -122,23 +171,132 @@ main {
     color: $darkCoffeeCol;
 
     @include flex(column, center, center);
-    gap: 20px;
+    gap: $gapTwnty;
+
+    display: none;
 
     .coffee-type {
-        width: 400px;
-        padding: 20px 0px;
-        text-align: center;
+        @include searchStyle(400px);
+        @include borderStyle($darkCoffeeCol);
 
-        font-family: $ribeyeFont;
+        @include customizedSelect;
+    }
 
-        border-radius: $borderRadTwnty;
+    .coffee-name {
+        @include searchStyle(400px);
+        @include borderStyle($darkCoffeeCol);
+    }
+}
 
-        appearance: none;
-        background-image: url('../images/icons8-down-arrow-50.png');
-        background-repeat: no-repeat;
-        background-position: right 20px center;
-        background-size: 20px;
+.add-coffee {
+    @include flex(column, center, center);
+    gap: $gapTwnty;
 
-        transition: all 0.2s ease-in-out;
+    color: $darkCoffeeCol;
+
+    .coffee-detail-section-one {
+        width: 500px;
+        @include flex(row, flex-start, space-around);
+        gap: $gapTwnty;
+
+        .coffee-image-cont {
+            @include flex(column, center, center);
+            gap: $gapTwnty;
+
+            img {
+                background-color: $imageBgCol;
+                border-radius: $borderRadTwoHun;
+
+                object-fit: cover;
+
+                transition: filter 0.3s ease-in-out;
+
+                &:hover {
+                    filter: brightness(0.7);
+                }
+            }
+
+            label {
+                cursor: pointer;
+                margin-top: $gapTwnty;
+
+                input[type="file"] {
+                    position: absolute;
+                    top: -1000px;
+                    left: -1000px;
+                }
+            }
+        }
+
+        .coffee-add-details {
+            @include flex(column, flex-start, center);
+            gap: $gapTwnty;
+
+            .coffee-type {
+                @include searchStyle(250px);
+                @include borderStyle($darkCoffeeCol);
+                @include customizedSelect;
+            }
+
+            .coffee-name {
+                @include searchStyle(250px);
+                @include borderStyle($darkCoffeeCol);
+            }
+        }
+    }
+
+    .coffee-detail-section-two {
+        @include flex(column, center, center);
+        gap: $gapTwnty;
+
+        textarea {
+            @include searchStyle(450px);
+            @include borderStyle($darkCoffeeCol);
+
+            resize: none;
+            border-radius: 0px;
+        }
+
+        .btn {
+            @include btnStyles(optTwo);
+
+            &:active {
+                box-shadow: none;
+                transform: translateY(8px);
+            }
+        }
+    }
+}
+
+.coffee-list {
+    width: $widthScreen;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .coffee-card {
+        @include cardStyles();
+        border: solid 1px #270f04;
+        overflow: hidden;
+
+        .card-coffee-image {
+            width: 120px;
+            height: 120px;
+            display: none;
+
+            background-color: $imageBgCol;
+            border-radius: $borderRadTwoHun;
+            object-fit: cover;
+        }
+
+        .coffee-desc {
+         
+        }
+
+        &:hover {
+            order: -1;
+            width: 500px;
+        }
     }
 }
